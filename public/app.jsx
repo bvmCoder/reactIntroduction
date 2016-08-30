@@ -16,7 +16,7 @@ var Greeter = React.createClass({
 		console.log(this);
 		var nameRef = this.refs.name;
 		var name = nameRef.value;
-		if(typeof(name) === 'string' && name) {
+		if(typeof(name) === 'string' && name.length > 0) {
 			this.setState({
 				name : name
 			});
