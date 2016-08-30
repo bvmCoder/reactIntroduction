@@ -4,20 +4,44 @@ var Greeter = React.createClass({
 		return {
 			name : 'WebPack',
 			message: 'This is From Greeter Component'
-		}
+		};
 	},
-  render: function () {
-  	console.log(this); // very very important
-  	var name = this.props.name,
-  	 	message = this.props.message;
+	getInitialState : function () {
+		return {
+			name : this.props.name
+		};
+	},
+	onButtonClick : function (e){
+		e.preventDefault();
+		console.log(this);
+		var nameRef = this.refs.name;
+		var name = nameRef.value;
+		if(typeof(name) === 'string' && name) {
+			this.setState({
+				name : name
+			});
+		}
+		nameRef.value = '';
+		//console.log(name);
+	},
+	render: function () {
+	  	console.log(this); // very very important
+	  	var name = this.state.name,
+	  	 	message = this.props.message;
 
-    return (
-      <div>
-        <h1>Hello {name}!</h1>
-        <p>{message + ' and Use it with the String Concatenation!'}</p>
-      </div>
-    );
-  }
+	    return (
+	      <div>
+	        <h1>Hello {name}!</h1>
+	        <p>{message + ' and Use it with the String Concatenation!'}</p>
+
+	        <form onSubmit={this.onButtonClick}>
+	        	<input type="text" ref="name" />
+	        	<button>Set Name</button>
+	        </form>
+
+	      </div>
+	    );
+	}
 });
 
 var firstName = 'Dixit Patel';
