@@ -54,4 +54,19 @@
     console.log(res);
 
 
+    var redux = require('redux');
+    console.log('Starting Redux Example');
+
+    var reducer = (state = {name : 'Anonymous'}, action) => {
+        // state = state || {name : 'Anonymous'};
+        // very basic reduces , default state reducer has
+        // even if there in no action || the action it dosnt recognize
+        return state;
+    };
+
+    var store = redux.createStore(reducer);
+
+    var currentState = store.getState();
+    console.log('Current State', currentState);
+
 })();
