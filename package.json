@@ -15,7 +15,9 @@
   "author": "Dixit Patel",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.14.0",
+    "jquery": "^3.1.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "redux": "^3.5.2"

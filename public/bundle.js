@@ -49,6 +49,27 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
 
+	var GreeterMessage = React.createClass({
+		displayName: 'GreeterMessage',
+
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'h1',
+					null,
+					'Simple H1 TAG'
+				),
+				React.createElement(
+					'p',
+					null,
+					'Simple Paragraph'
+				)
+			);
+		}
+	});
+
 	var Greeter = React.createClass({
 		displayName: 'Greeter',
 
@@ -97,13 +118,15 @@
 					null,
 					message + ' and Use it with the String Concatenation!'
 				),
+				React.createElement('hr', null),
+				React.createElement(GreeterMessage, null),
 				React.createElement(
 					'form',
 					{ onSubmit: this.onButtonClick },
 					React.createElement('input', { type: 'text', ref: 'name' }),
 					React.createElement(
 						'button',
-						null,
+						{ className: 'btn btn-success' },
 						'Set Name'
 					)
 				)

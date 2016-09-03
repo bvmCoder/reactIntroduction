@@ -1,6 +1,18 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+
+var GreeterMessage = React.createClass({
+	render : function() {
+		return (
+			<div>
+				<h1>Simple H1 TAG</h1>
+				<p>Simple Paragraph</p>
+			</div>
+		);
+	}
+});
+
 var Greeter = React.createClass({
 	// added defaultProps is we don't pass any props to the Greeter Component
 	getDefaultProps : function() {
@@ -36,10 +48,11 @@ var Greeter = React.createClass({
 	      <div>
 	        <h1>Hello {name}!</h1>
 	        <p>{message + ' and Use it with the String Concatenation!'}</p>
-
+	        <hr />
+	        <GreeterMessage/>
 	        <form onSubmit={this.onButtonClick}>
 	        	<input type="text" ref="name" />
-	        	<button>Set Name</button>
+	        	<button className="btn btn-success">Set Name</button>
 	        </form>
 
 	      </div>
