@@ -59,12 +59,29 @@
 				React.createElement(
 					'h1',
 					null,
-					'Simple H1 TAG'
+					'Simple H1 using TAG'
 				),
 				React.createElement(
 					'p',
 					null,
-					'Simple Paragraph'
+					'Simple Paragraph using TAG'
+				)
+			);
+		}
+	});
+
+	var GreeterForm = React.createClass({
+		displayName: 'GreeterForm',
+
+		render: function render() {
+			return React.createElement(
+				'form',
+				null,
+				React.createElement('input', { type: 'text', ref: 'name' }),
+				React.createElement(
+					'button',
+					{ className: 'btn btn-success' },
+					'Set Name'
 				)
 			);
 		}
@@ -129,7 +146,9 @@
 						{ className: 'btn btn-success' },
 						'Set Name'
 					)
-				)
+				),
+				React.createElement('hr', null),
+				React.createElement(GreeterForm, null)
 			);
 		}
 	});

@@ -6,9 +6,20 @@ var GreeterMessage = React.createClass({
 	render : function() {
 		return (
 			<div>
-				<h1>Simple H1 TAG</h1>
-				<p>Simple Paragraph</p>
+				<h1>Simple H1 using TAG</h1>
+				<p>Simple Paragraph using TAG</p>
 			</div>
+		);
+	}
+});
+
+var GreeterForm = React.createClass({
+	render : function() {
+		return (
+			<form>
+	        	<input type="text" ref="name" />
+	        	<button className="btn btn-success">Set Name</button>
+	        </form>
 		);
 	}
 });
@@ -50,11 +61,13 @@ var Greeter = React.createClass({
 	        <p>{message + ' and Use it with the String Concatenation!'}</p>
 	        <hr />
 	        <GreeterMessage/>
+
 	        <form onSubmit={this.onButtonClick}>
 	        	<input type="text" ref="name" />
 	        	<button className="btn btn-success">Set Name</button>
 	        </form>
-
+	        <hr />
+	        <GreeterForm/>
 	      </div>
 	    );
 	}
