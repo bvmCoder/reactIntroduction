@@ -1,3 +1,6 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 var Greeter = React.createClass({
 	// added defaultProps is we don't pass any props to the Greeter Component
 	getDefaultProps : function() {
@@ -44,12 +47,16 @@ var Greeter = React.createClass({
 	}
 });
 
+function byId(id){
+	return document.getElementById(id);
+}
+
 var firstName = 'Dixit Patel';
+var MainApp = byId('app');
 
 // render the Component called Greeter , name is the prop is the HTML attribute
 ReactDOM.render(
-  <Greeter name={firstName} message={'Message from Props'} />,
-  document.getElementById('app')
+  <Greeter name={firstName} message={'Message from Props'} />, MainApp
 );
 
 // props is short for properties, is the way to pass the data into your component
