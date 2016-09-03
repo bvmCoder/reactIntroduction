@@ -2,6 +2,8 @@
     'use strict';
     // pure and impure functions
 
+    var Greeter = require('./components/Greeter');
+
     var add = function(a, b, c) {
        return (a + b + c);
     };
@@ -75,12 +77,17 @@
         showCompleted: false,
         todos: []
     };
+    /*
     var reducer = (state = stateDefault, action) => {
 
     };
 
+
     var store = redux.createStore(reducer);
     console.log('Current State', store.getState());
+    */
 
+
+    Greeter();
 
 })();
