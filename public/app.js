@@ -5,7 +5,7 @@
     var Greeter = require('./components/Greeter');
 
     var add = function(a, b, c) {
-       return (a + b + c);
+        return (a + b + c);
     };
 
     // it always going to return the same result as the same input
@@ -20,22 +20,22 @@
 
     var a = 5;
 
-    function addOne(b){
+    function addOne(b) {
         return a + b;
     }
 
     var result;
 
-    function addTwo(a, b){
+    function addTwo(a, b) {
         result = a + b;
         return result;
     }
 
-    function addThree(a, b){
+    function addThree(a, b) {
         return a + b + new Date().getSeconds();
     }
 
-    function changeProp(obj){
+    function changeProp(obj) {
 
         obj.name = 'Jen';
         return obj;
@@ -50,7 +50,7 @@
 
     var res = changeProp({
         name: 'Dixit Patel',
-        age : 25
+        age: 25
     });
 
     console.log(res);
@@ -73,7 +73,7 @@
     */
     console.log('Starting ToDo Redux Example');
     var stateDefault = {
-        searchText : '',
+        searchText: '',
         showCompleted: false,
         todos: []
     };
@@ -89,5 +89,17 @@
 
 
     Greeter();
+
+    var _extends = Object.assign || function(target) {
+        for (var i = 1; i < arguments.length; i++) {
+            var source = arguments[i];
+            for (var key in source) {
+                if (Object.prototype.hasOwnProperty.call(source, key)) {
+                    target[key] = source[key];
+                }
+            }
+        }
+        return target;
+    };
 
 })();

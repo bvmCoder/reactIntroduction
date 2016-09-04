@@ -2,6 +2,10 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 
+var byId = function byId(id){
+	return document.getElementById(id);
+};
+
 var GreeterMessage = React.createClass({
 	render : function() {
 		return (
@@ -14,12 +18,25 @@ var GreeterMessage = React.createClass({
 });
 
 var GreeterForm = React.createClass({
+	onFormSubmit : function (e){
+		e.preventDefault();
+		console.log(this);
+		var nameRef = this.refs.name;
+		var name = nameRef.value;
+		if(typeof(name) === 'string' && name.length > 0) {
+			this.setState({
+				name : name
+			});
+		}
+		nameRef.value = '';
+		//console.log(name);
+	},
 	render : function() {
 		return (
-			<form>
+			<form onSubmit={this.onFormSubmit}>
 	        	<input type="text" ref="name" />
 	        	<button className="btn btn-success">Set Name</button>
-	        </form>
+	    </form>
 		);
 	}
 });
@@ -73,16 +90,12 @@ var Greeter = React.createClass({
 	}
 });
 
-function byId(id){
-	return document.getElementById(id);
-}
+
 
 var firstName = 'Dixit Patel';
 var MainApp = byId('app');
 
 // render the Component called Greeter , name is the prop is the HTML attribute
-ReactDOM.render(
-  <Greeter name={firstName} message={'Message from Props'} />, MainApp
-);
+ReactDOM.render(<Greeter name={firstName} message={'Message from Props'} />, MainApp);
 
 // props is short for properties, is the way to pass the data into your component
