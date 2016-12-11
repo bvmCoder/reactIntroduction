@@ -2,9 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 
-var byId = function byId(id){
-	return document.getElementById(id);
-};
+const _ById = (id) => document.getElementById(id);
+
 
 var GreeterMessage = React.createClass({
 	render : function() {
@@ -93,7 +92,7 @@ var Greeter = React.createClass({
 
 
 var firstName = 'Dixit Patel';
-var MainApp = byId('app');
+var MainApp = _ById('app');
 
 // render the Component called Greeter , name is the prop is the HTML attribute
 ReactDOM.render(<Greeter name={firstName} message={'Message from Props'} />, MainApp);
