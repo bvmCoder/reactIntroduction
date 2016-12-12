@@ -5,6 +5,12 @@ module.exports = {
         filename : './public/bundle.js'
     },
     resolve : {
+        root: __dirname,
+        alias: {
+          Greeter : 'public/components/Greeter.jsx',
+          GreeterMessage : 'public/components/GreeterMessage.jsx',
+          GreeterForm : 'public/components/GreeterForm.jsx',
+        },
         extensions : ['', '.js', '.jsx']
     },
     module : {
@@ -18,3 +24,6 @@ module.exports = {
         }]
     }
 };
+
+// __dirname is a variable available in the node.js and
+// it will give you the path by default
