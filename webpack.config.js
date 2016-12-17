@@ -22,7 +22,8 @@ module.exports = {
             test : /\.jsx?$/,
             exclude : /(node_modules|bower_components)/
         }]
-    }
+    },
+    devtools: "cheap-module"
 };
 
 // __dirname is a variable available in the node.js and
